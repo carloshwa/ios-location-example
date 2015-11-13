@@ -10,8 +10,11 @@
 #import "ViewController.h"
 
 #import <GoogleMaps/GoogleMaps.h>
-#import <FacebookSDK/FacebookSDK.h>
 #import <Firebase/Firebase.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+NSString* const kFirebaseUrl = @"http://convoyer.firebaseio.com";
+static NSString* const kGmsMapApiKey = @"AIzaSyA9KuN67O4D4fWxEgdBiQGxyJdzEhfcZr0";
 
 @implementation AppDelegate
 
@@ -21,7 +24,11 @@
          annotation:(id)annotation
 {
     // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    BOOL wasHandled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                     openURL:url
+                                                           sourceApplication:sourceApplication
+                                                                  annotation:annotation
+                       ];
     if (wasHandled) {
         [self authToFirebase];
     }
@@ -32,10 +39,10 @@
 // notify firebase that user has logged in
 - (void)authToFirebase
 {
-    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSString *fbAccessToken = [[FBSDKAccessToken currentAccessToken] tokenString]; //[[[FBSession activeSession] accessTokenData] accessToken];
     // if we have an access token, authenticate to firebase
     if (fbAccessToken) {
-        Firebase *ref = [[Firebase alloc] initWithUrl:@"https://location-demo.firebaseio.com"];
+        Firebase *ref = [[Firebase alloc] initWithUrl:kFirebaseUrl];
         [ref authWithOAuthProvider:@"facebook" token:fbAccessToken withCompletionBlock:^(NSError *error, FAuthData *authData) {
             if (error) {
                 NSLog(@"Error on login %@", error);
@@ -56,7 +63,7 @@
 - (void)deauthToFirebase
 {
     if (self.displayName_) {
-        Firebase *positionRef = [[[Firebase alloc] initWithUrl:@"https://location-demo.firebaseio.com"] childByAppendingPath:self.displayName_];
+        Firebase *positionRef = [[[Firebase alloc] initWithUrl:kFirebaseUrl] childByAppendingPath:self.displayName_];
         [positionRef removeValueWithCompletionBlock:^(NSError *error, Firebase *ref) {
             self.displayName_ = nil;
             [positionRef unauth];
@@ -89,7 +96,7 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.locationManager_ startUpdatingLocation];
-    } else if (status == kCLAuthorizationStatusAuthorized) {
+    } else if (status == kCLAuthorizationStatusAuthorizedAlways) {
         // iOS 7 will redundantly call this line.
         [self.locationManager_ startUpdatingLocation];
     } else if (status > kCLAuthorizationStatusNotDetermined) {
@@ -125,7 +132,7 @@
             },
             @"timestamp" : [NSNumber numberWithInt:[[NSNumber numberWithDouble:loc.timestamp.timeIntervalSince1970 * 1000] intValue]]
         };
-        Firebase *positionRef = [[[Firebase alloc] initWithUrl:@"https://location-demo.firebaseio.com"] childByAppendingPath:self.displayName_];
+        Firebase *positionRef = [[[Firebase alloc] initWithUrl:kFirebaseUrl] childByAppendingPath:self.displayName_];
         [positionRef setValue:value];
         // if the user disconnects, remove his data from firebase
         [positionRef onDisconnectRemoveValue];
@@ -135,9 +142,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"location-demo-Info" ofType:@"plist"];
-    NSMutableDictionary *plist = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    [GMSServices provideAPIKey:[plist objectForKey:@"GMSAPIKey"]];
+    [GMSServices provideAPIKey:kGmsMapApiKey];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     [self authToFirebase];
     return YES;
 }
@@ -162,6 +169,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

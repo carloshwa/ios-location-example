@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5100892719DE5D1700DDDF03 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5100892619DE5D1700DDDF03 /* Firebase.framework */; };
-		511CC70919DDCA1800449EDC /* location-demo-Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 51BB971419ABDA22005E7F04 /* location-demo-Info.plist */; };
 		51BB970D19ABDA22005E7F04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB970C19ABDA22005E7F04 /* Foundation.framework */; };
 		51BB970F19ABDA22005E7F04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB970E19ABDA22005E7F04 /* CoreGraphics.framework */; };
 		51BB971119ABDA22005E7F04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB971019ABDA22005E7F04 /* UIKit.framework */; };
@@ -16,9 +14,7 @@
 		51BB971919ABDA22005E7F04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BB971819ABDA22005E7F04 /* main.m */; };
 		51BB971D19ABDA22005E7F04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BB971C19ABDA22005E7F04 /* AppDelegate.m */; };
 		51BB972019ABDA22005E7F04 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BB971E19ABDA22005E7F04 /* Main_iPhone.storyboard */; };
-		51BB972319ABDA22005E7F04 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BB972119ABDA22005E7F04 /* Main_iPad.storyboard */; };
 		51BB972619ABDA22005E7F04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51BB972519ABDA22005E7F04 /* ViewController.m */; };
-		51BB972819ABDA22005E7F04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BB972719ABDA22005E7F04 /* Images.xcassets */; };
 		51BB973019ABDA22005E7F04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB970C19ABDA22005E7F04 /* Foundation.framework */; };
 		51BB973119ABDA22005E7F04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB971019ABDA22005E7F04 /* UIKit.framework */; };
 		51BB973919ABDA22005E7F04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51BB973719ABDA22005E7F04 /* InfoPlist.strings */; };
@@ -39,9 +35,8 @@
 		51BB977919ABDF92005E7F04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB977819ABDF92005E7F04 /* SystemConfiguration.framework */; };
 		51BB977B19ABE101005E7F04 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB977A19ABE101005E7F04 /* Accounts.framework */; };
 		51BB977D19ABE105005E7F04 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB977C19ABE105005E7F04 /* Social.framework */; };
-		51BB978B19ABE9E6005E7F04 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB978A19ABE9E6005E7F04 /* GoogleMaps.framework */; };
-		51BB978D19ABE9F1005E7F04 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 51BB978C19ABE9F1005E7F04 /* GoogleMaps.bundle */; };
-		51BB979519BFAF19005E7F04 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB979419BFAF19005E7F04 /* FacebookSDK.framework */; };
+		9F8A0F0D1E73E19A428326D4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1ACF8AE7D9550BDA6834CA /* libPods.a */; };
+		BAA89FEE1BF6657800DB4390 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FED1BF6657800DB4390 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +56,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				511CC70919DDCA1800449EDC /* location-demo-Info.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5100892619DE5D1700DDDF03 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		01F17F560035CE76844D446C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		51BB970919ABDA22005E7F04 /* location-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "location-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BB970C19ABDA22005E7F04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		51BB970E19ABDA22005E7F04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,10 +74,8 @@
 		51BB971B19ABDA22005E7F04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		51BB971C19ABDA22005E7F04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		51BB971F19ABDA22005E7F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		51BB972219ABDA22005E7F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		51BB972419ABDA22005E7F04 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		51BB972519ABDA22005E7F04 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		51BB972719ABDA22005E7F04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		51BB972D19ABDA22005E7F04 /* location-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "location-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BB973619ABDA22005E7F04 /* location-demoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "location-demoTests-Info.plist"; sourceTree = "<group>"; };
 		51BB973819ABDA22005E7F04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -104,9 +96,9 @@
 		51BB977819ABDF92005E7F04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		51BB977A19ABE101005E7F04 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		51BB977C19ABE105005E7F04 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		51BB978A19ABE9E6005E7F04 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		51BB978C19ABE9F1005E7F04 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		51BB979419BFAF19005E7F04 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		9E37749CC86990B9B7244468 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BAA89FED1BF6657800DB4390 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BC1ACF8AE7D9550BDA6834CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,16 +118,14 @@
 				51BB976B19ABDF6D005E7F04 /* CoreText.framework in Frameworks */,
 				51BB976919ABDF68005E7F04 /* CoreLocation.framework in Frameworks */,
 				51BB976719ABDF63005E7F04 /* CoreData.framework in Frameworks */,
-				51BB979519BFAF19005E7F04 /* FacebookSDK.framework in Frameworks */,
 				51BB976519ABDF5E005E7F04 /* AVFoundation.framework in Frameworks */,
 				51BB975D19ABDC71005E7F04 /* Security.framework in Frameworks */,
-				5100892719DE5D1700DDDF03 /* Firebase.framework in Frameworks */,
 				51BB975B19ABDC6C005E7F04 /* CFNetwork.framework in Frameworks */,
 				51BB975919ABDC65005E7F04 /* libicucore.dylib in Frameworks */,
 				51BB970F19ABDA22005E7F04 /* CoreGraphics.framework in Frameworks */,
 				51BB971119ABDA22005E7F04 /* UIKit.framework in Frameworks */,
 				51BB970D19ABDA22005E7F04 /* Foundation.framework in Frameworks */,
-				51BB978B19ABE9E6005E7F04 /* GoogleMaps.framework in Frameworks */,
+				9F8A0F0D1E73E19A428326D4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EB6BFCA50E7D7F4705BDA7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01F17F560035CE76844D446C /* Pods.debug.xcconfig */,
+				9E37749CC86990B9B7244468 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		51BB970019ABDA22005E7F04 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +157,7 @@
 				51BB973419ABDA22005E7F04 /* location-demoTests */,
 				51BB970B19ABDA22005E7F04 /* Frameworks */,
 				51BB970A19ABDA22005E7F04 /* Products */,
+				3EB6BFCA50E7D7F4705BDA7A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,10 +173,6 @@
 		51BB970B19ABDA22005E7F04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5100892619DE5D1700DDDF03 /* Firebase.framework */,
-				51BB979419BFAF19005E7F04 /* FacebookSDK.framework */,
-				51BB978C19ABE9F1005E7F04 /* GoogleMaps.bundle */,
-				51BB978A19ABE9E6005E7F04 /* GoogleMaps.framework */,
 				51BB977C19ABE105005E7F04 /* Social.framework */,
 				51BB977A19ABE101005E7F04 /* Accounts.framework */,
 				51BB977819ABDF92005E7F04 /* SystemConfiguration.framework */,
@@ -196,6 +192,7 @@
 				51BB970C19ABDA22005E7F04 /* Foundation.framework */,
 				51BB970E19ABDA22005E7F04 /* CoreGraphics.framework */,
 				51BB971019ABDA22005E7F04 /* UIKit.framework */,
+				BC1ACF8AE7D9550BDA6834CA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,10 +203,9 @@
 				51BB971B19ABDA22005E7F04 /* AppDelegate.h */,
 				51BB971C19ABDA22005E7F04 /* AppDelegate.m */,
 				51BB971E19ABDA22005E7F04 /* Main_iPhone.storyboard */,
-				51BB972119ABDA22005E7F04 /* Main_iPad.storyboard */,
 				51BB972419ABDA22005E7F04 /* ViewController.h */,
 				51BB972519ABDA22005E7F04 /* ViewController.m */,
-				51BB972719ABDA22005E7F04 /* Images.xcassets */,
+				BAA89FED1BF6657800DB4390 /* Images.xcassets */,
 				51BB971319ABDA22005E7F04 /* Supporting Files */,
 			);
 			path = "location-demo";
@@ -251,10 +247,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51BB973E19ABDA22005E7F04 /* Build configuration list for PBXNativeTarget "location-demo" */;
 			buildPhases = (
+				44AB933B2B33966FBC8F8159 /* Check Pods Manifest.lock */,
 				51BB970519ABDA22005E7F04 /* Sources */,
 				51BB970619ABDA22005E7F04 /* Frameworks */,
 				51BB970719ABDA22005E7F04 /* Resources */,
 				511CC70719DDC9DF00449EDC /* CopyFiles */,
+				C271E98338F0FF9439D61D87 /* Embed Pods Frameworks */,
+				8E5A038A95FB1CE5A5AE1B94 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,7 +288,7 @@
 		51BB970119ABDA22005E7F04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Firebase;
 				TargetAttributes = {
 					51BB972C19ABDA22005E7F04 = {
@@ -321,11 +320,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51BB972319ABDA22005E7F04 /* Main_iPad.storyboard in Resources */,
-				51BB972819ABDA22005E7F04 /* Images.xcassets in Resources */,
+				BAA89FEE1BF6657800DB4390 /* Images.xcassets in Resources */,
 				51BB972019ABDA22005E7F04 /* Main_iPhone.storyboard in Resources */,
 				51BB971719ABDA22005E7F04 /* InfoPlist.strings in Resources */,
-				51BB978D19ABE9F1005E7F04 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +335,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44AB933B2B33966FBC8F8159 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E5A038A95FB1CE5A5AE1B94 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C271E98338F0FF9439D61D87 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51BB970519ABDA22005E7F04 /* Sources */ = {
@@ -385,14 +430,6 @@
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		51BB972119ABDA22005E7F04 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51BB972219ABDA22005E7F04 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		51BB973719ABDA22005E7F04 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,6 +459,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -436,8 +475,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,6 +501,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -469,7 +510,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -478,48 +521,48 @@
 		};
 		51BB973F19ABDA22005E7F04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F17F560035CE76844D446C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tonymeng/Downloads,
-					/Users/tonymeng/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "location-demo/location-demo-Prefix.pch";
 				INFOPLIST_FILE = "location-demo/location-demo-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GoogleMaps.framework",
-				);
-				OTHER_LDFLAGS = "-ObjC";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.location-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		51BB974019ABDA22005E7F04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E37749CC86990B9B7244468 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tonymeng/Downloads,
-					/Users/tonymeng/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "location-demo/location-demo-Prefix.pch";
 				INFOPLIST_FILE = "location-demo/location-demo-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GoogleMaps.framework",
-				);
-				OTHER_LDFLAGS = "-ObjC";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.location-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -540,6 +583,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "location-demoTests/location-demoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -558,6 +602,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "location-demo/location-demo-Prefix.pch";
 				INFOPLIST_FILE = "location-demoTests/location-demoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

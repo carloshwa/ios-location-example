@@ -10,7 +10,13 @@
 #import "AppDelegate.h"
 
 #import <Firebase/Firebase.h>
-#import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@end
 
 @implementation ViewController 
 
@@ -31,23 +37,22 @@
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:37.7833
                                                             longitude:-122.4167
                                                                  zoom:8];
-    self.mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    self.mapView_.myLocationEnabled = YES;
-    self.view = self.mapView_;
+//    self.mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    self.mapView.camera = camera;
+    self.mapView.settings.myLocationButton = YES;
+    self.mapView.settings.rotateGestures = NO;
+    self.mapView.myLocationEnabled = YES;
+//    self.view = self.mapView_;
 }
 
 // load the facebook login button
 - (void)loadFacebookView
 {
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    // position the login button
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    // create a button that's the width of the screen (with 4 padding) and has a height of 50
-    // move the button to the bottom of the screen (screen height - button height (50))
-    loginView.frame = CGRectMake(4, screenRect.size.height-50, screenRect.size.width-(4*2), 50);
-    // set the view controller as the delegate
-    loginView.delegate = self;
-    [self.view addSubview:loginView];
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    // Optional: Place the button in the center of your view.
+//    loginButton.center = self.view.center;
+//    [self.view addSubview:loginButton];
 }
 
 // setup firebase listerners to handle other users' locations
@@ -55,28 +60,28 @@
 {
     // house all the markers in a map
     self.usersToMarkers_ = [NSMapTable mapTableWithKeyOptions:NSMapTableStrongMemory valueOptions:NSMapTableWeakMemory];
-    Firebase *ref = [[Firebase alloc] initWithUrl:@"https://location-demo.firebaseio.com"];
+    Firebase *ref = [[Firebase alloc] initWithUrl:kFirebaseUrl];
     // listen for new users
     [ref observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *s2) {
         // listen for updates for each user
-        [[ref childByAppendingPath:s2.name] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [[ref childByAppendingPath:s2.key] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
             // check to see if user was updated or removed
-            if (snapshot.value != [NSNull null]) {
+            if (snapshot.key) {
                 // location updated, create/move the marker
-                GMSMarker *marker = [self.usersToMarkers_ objectForKey:snapshot.name];
+                GMSMarker *marker = [self.usersToMarkers_ objectForKey:snapshot.key];
                 if (!marker) {
                     marker = [[GMSMarker alloc] init];
-                    marker.title = snapshot.name;
-                    marker.map = self.mapView_;
-                    [self.usersToMarkers_ setObject:marker forKey:snapshot.name];
+                    marker.title = snapshot.key;
+                    marker.map = self.mapView;
+                    [self.usersToMarkers_ setObject:marker forKey:snapshot.key];
                 }
                 marker.position = CLLocationCoordinate2DMake([snapshot.value[@"coords"][@"latitude"] doubleValue], [snapshot.value[@"coords"][@"longitude"] doubleValue]);
             } else {
                 // user was removed, remove the marker
-                GMSMarker *marker = [self.usersToMarkers_ objectForKey:snapshot.name];
+                GMSMarker *marker = [self.usersToMarkers_ objectForKey:snapshot.key];
                 if (marker) {
                     marker.map = nil;
-                    [self.usersToMarkers_ removeObjectForKey:snapshot.name];
+                    [self.usersToMarkers_ removeObjectForKey:snapshot.key];
                 }
             }
         }];
@@ -87,13 +92,13 @@
 - (void)updateCameraWithLocation:(CLLocation*)location
 {
     NSLog(@"Updating camera");
-    GMSCameraPosition *oldPosition = [self.mapView_ camera];
+    GMSCameraPosition *oldPosition = [self.mapView camera];
     GMSCameraPosition *position = [[GMSCameraPosition alloc] initWithTarget:[location coordinate] zoom:[oldPosition zoom] bearing:[location course] viewingAngle:[oldPosition viewingAngle]];
-    [self.mapView_ setCamera:position];
+    [self.mapView setCamera:position];
 }
 
 // Logged-out user experience
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
+- (void)loginViewShowingLoggedOutUser:(FBSDKLoginButton *)loginView
 {
     NSLog(@"FB: logged out");
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

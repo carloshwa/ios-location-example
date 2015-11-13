@@ -19,4 +19,6 @@
 - (void)authToFirebase;
 - (void)deauthToFirebase;
 
+extern NSString* const kFirebaseUrl;
+
 @end

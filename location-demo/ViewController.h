@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface ViewController : UIViewController <FBLoginViewDelegate>
-
-@property (strong, nonatomic) GMSMapView *mapView_;
+@interface ViewController : UIViewController
 @property (strong, nonatomic) NSMapTable *usersToMarkers_;
 
 - (void)updateCameraWithLocation:(CLLocation*)location;

@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.4'
+pod 'GoogleMaps'
+pod 'Firebase', '>= 2.4.1'
+pod 'FBSDKCoreKit', '4.7.1'
+pod 'FBSDKLoginKit', '4.7.1'
