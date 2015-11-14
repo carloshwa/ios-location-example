@@ -37,6 +37,10 @@
 		51BB977D19ABE105005E7F04 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51BB977C19ABE105005E7F04 /* Social.framework */; };
 		9F8A0F0D1E73E19A428326D4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1ACF8AE7D9550BDA6834CA /* libPods.a */; };
 		BAA89FEE1BF6657800DB4390 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FED1BF6657800DB4390 /* Images.xcassets */; };
+		BAA89FF41BF6776B00DB4390 /* logo_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FF01BF6776B00DB4390 /* logo_ipad.png */; };
+		BAA89FF51BF6776B00DB4390 /* logo_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FF11BF6776B00DB4390 /* logo_ipad@2x.png */; };
+		BAA89FF61BF6776B00DB4390 /* logo_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FF21BF6776B00DB4390 /* logo_iphone@2x.png */; };
+		BAA89FF71BF6776B00DB4390 /* logo_iphone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAA89FF31BF6776B00DB4390 /* logo_iphone@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,10 @@
 		51BB977C19ABE105005E7F04 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9E37749CC86990B9B7244468 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BAA89FED1BF6657800DB4390 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAA89FF01BF6776B00DB4390 /* logo_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_ipad.png; path = Images/logo_ipad.png; sourceTree = "<group>"; };
+		BAA89FF11BF6776B00DB4390 /* logo_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_ipad@2x.png"; path = "Images/logo_ipad@2x.png"; sourceTree = "<group>"; };
+		BAA89FF21BF6776B00DB4390 /* logo_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_iphone@2x.png"; path = "Images/logo_iphone@2x.png"; sourceTree = "<group>"; };
+		BAA89FF31BF6776B00DB4390 /* logo_iphone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_iphone@3x.png"; path = "Images/logo_iphone@3x.png"; sourceTree = "<group>"; };
 		BC1ACF8AE7D9550BDA6834CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -200,6 +208,7 @@
 		51BB971219ABDA22005E7F04 /* location-demo */ = {
 			isa = PBXGroup;
 			children = (
+				BAA89FEF1BF6776200DB4390 /* Images */,
 				51BB971B19ABDA22005E7F04 /* AppDelegate.h */,
 				51BB971C19ABDA22005E7F04 /* AppDelegate.m */,
 				51BB971E19ABDA22005E7F04 /* Main_iPhone.storyboard */,
@@ -238,6 +247,17 @@
 				51BB973719ABDA22005E7F04 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAA89FEF1BF6776200DB4390 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BAA89FF01BF6776B00DB4390 /* logo_ipad.png */,
+				BAA89FF11BF6776B00DB4390 /* logo_ipad@2x.png */,
+				BAA89FF21BF6776B00DB4390 /* logo_iphone@2x.png */,
+				BAA89FF31BF6776B00DB4390 /* logo_iphone@3x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +311,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Firebase;
 				TargetAttributes = {
+					51BB970819ABDA22005E7F04 = {
+						DevelopmentTeam = J9W686P3YX;
+					};
 					51BB972C19ABDA22005E7F04 = {
 						TestTargetID = 51BB970819ABDA22005E7F04;
 					};
@@ -322,6 +345,10 @@
 			files = (
 				BAA89FEE1BF6657800DB4390 /* Images.xcassets in Resources */,
 				51BB972019ABDA22005E7F04 /* Main_iPhone.storyboard in Resources */,
+				BAA89FF61BF6776B00DB4390 /* logo_iphone@2x.png in Resources */,
+				BAA89FF51BF6776B00DB4390 /* logo_ipad@2x.png in Resources */,
+				BAA89FF71BF6776B00DB4390 /* logo_iphone@3x.png in Resources */,
+				BAA89FF41BF6776B00DB4390 /* logo_ipad.png in Resources */,
 				51BB971719ABDA22005E7F04 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -510,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -525,6 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,7 +561,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "location-demo/location-demo-Prefix.pch";
 				INFOPLIST_FILE = "location-demo/location-demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.location-demo";
@@ -549,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,7 +586,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "location-demo/location-demo-Prefix.pch";
 				INFOPLIST_FILE = "location-demo/location-demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "pandamonium.location-demo";
