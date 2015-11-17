@@ -124,6 +124,8 @@ static NSString* const kGmsMapApiKey = @"AIzaSyA9KuN67O4D4fWxEgdBiQGxyJdzEhfcZr0
     }
     if (self.displayName_) {
         // if the user has logged in, update firebase with the new location
+        Firebase *positionRef = [[[Firebase alloc] initWithUrl:kFirebaseUrl] childByAppendingPath:self.displayName_];
+        
         NSDictionary *value = @{
             @"coords": @{
                 @"accuracy" : [NSNumber numberWithDouble:loc.horizontalAccuracy],
@@ -132,10 +134,10 @@ static NSString* const kGmsMapApiKey = @"AIzaSyA9KuN67O4D4fWxEgdBiQGxyJdzEhfcZr0
             },
             @"timestamp" : [NSNumber numberWithInt:[[NSNumber numberWithDouble:loc.timestamp.timeIntervalSince1970 * 1000] intValue]]
         };
-        Firebase *positionRef = [[[Firebase alloc] initWithUrl:kFirebaseUrl] childByAppendingPath:self.displayName_];
-        [positionRef setValue:value];
+        
+        [positionRef updateChildValues:value];
         // if the user disconnects, remove his data from firebase
-        [positionRef onDisconnectRemoveValue];
+//        [positionRef onDisconnectRemoveValue];
     }
 }
 

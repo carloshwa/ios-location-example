@@ -16,6 +16,8 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
+- (IBAction)doneClicked:(id)sender;
 @end
 
 @implementation ViewController 
@@ -75,6 +77,7 @@
                     marker.map = self.mapView;
                     [self.usersToMarkers_ setObject:marker forKey:snapshot.key];
                 }
+                marker.snippet = snapshot.value[@"message"];
                 marker.position = CLLocationCoordinate2DMake([snapshot.value[@"coords"][@"latitude"] doubleValue], [snapshot.value[@"coords"][@"longitude"] doubleValue]);
             } else {
                 // user was removed, remove the marker
@@ -93,7 +96,7 @@
 {
     NSLog(@"Updating camera");
     GMSCameraPosition *oldPosition = [self.mapView camera];
-    GMSCameraPosition *position = [[GMSCameraPosition alloc] initWithTarget:[location coordinate] zoom:[oldPosition zoom] bearing:[location course] viewingAngle:[oldPosition viewingAngle]];
+    GMSCameraPosition *position = [GMSCameraPosition cameraWithTarget:location.coordinate zoom:oldPosition.zoom];
     [self.mapView setCamera:position];
 }
 
@@ -111,4 +114,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)doneClicked:(id)sender {
+    NSLog(@"%@", self.messageTextField.text);
+    Firebase *positionRef = [[[Firebase alloc] initWithUrl:kFirebaseUrl] childByAppendingPath:((AppDelegate*)[[UIApplication sharedApplication] delegate]).displayName_];
+    [[positionRef childByAppendingPath:@"message"] setValue:self.messageTextField.text];
+}
 @end
